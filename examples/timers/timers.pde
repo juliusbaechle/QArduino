@@ -1,6 +1,5 @@
 // Created by Julius Bächle
 
-#include <Arduino.h>
 #include <Timer.h>
 #include <Scheduler.h>
 
