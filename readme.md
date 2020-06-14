@@ -1,5 +1,5 @@
 Simplify parallel tasks by using non preemptive scheduling and
-use signals like in Qt to use the observer pattern
+use signals to connect static and member functions to use the observer pattern
 
 
 Installation
