@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include "Scheduler.h"
-#include "Thread.h";
+#include "Thread.h"
 
 #define MAXIMUM_INT_64 0x7FFFFFFFFFFFFFFF
 
