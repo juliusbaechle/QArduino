@@ -1,5 +1,5 @@
-This is a library to simplify parallel tasks by using non preemptive scheduling and
-implements signals to use the observer pattern like in Qt
+Simplify parallel tasks by using non preemptive scheduling and
+use signals like in Qt to use the observer pattern
 
 
 Installation
