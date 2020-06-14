@@ -2,11 +2,15 @@
 
 #include "QArduino.h"
 
+void print() {
+  Serial.println("print");
+}
+
 void printNumber(int number) {
   Serial.println(number);
 }
 
-// Printer will be used, to show how to connect member functions
+// Printer will be used, to show how to connect of member functions
 class Printer {
 public:
   void print() {
@@ -18,7 +22,7 @@ public:
   }
 };
 
-// Declare Signals with the correct parameter types
+// Declare Signals
 Signal<int> SglPrintNumber;
 Signal<> SglPrint;
 Signal<char*> SglPrintText;
@@ -35,13 +39,19 @@ void setup() {
   // to pass a member function, you have to use the SLOT(...) macro, in which you pass the parameter types
   SglPrint.connect(&printer, SLOT() Printer::print);
   SglPrintText.connect(&printer, SLOT(char*) Printer::printText);
+
+  // you can connect more than one slot, and even mix member and non member functions
+  SglPrint.connect(print);
 }
 
 void loop() {
-  // To call the connected functions you have to call emit and pass the parameters
+  static int i = 0;
+
+  // To call the connected functions you call emit and pass the parameters
+  SglPrintNumber.emit(i++);
   SglPrint.emit();
-  SglPrintNumber.emit(2);
   SglPrintText.emit("QArduino");
 
+  Serial.println();
   delay(1000);
 }
